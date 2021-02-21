@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Perfil de Usuário</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-avatar>
+      <img width="200" height="200" class="circle" [src]="profileImage" alt="">
+    </ion-avatar>
+    <ion-list show-update="true">
+    <h2 text-center>{{usuario?.nome}}</h2>
+    <h3 text-center>{{usuario?.email}}</h3>
+    </ion-list>
+    <ion-card>
+      <ion-card-header>
+        <h2 text-center></h2>
+      </ion-card-header>
+      <ion-item *ngIf="picture">
+        <img [src]="picture">
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        Endereço:
+      </ion-card-header>
+
+      <ion-item>
+        <h2>{{endereco?.logradouro}}, {{endereco?.numero}}</h2>
+        <p>{{endereco?.complemento}} {{endereco?.bairro}} CEP {{endereco?.cep}}</p>
+        <p>{{endereco?.cidade.nome}}, {{endereco?.cidade.estado.nome}}</p>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Confirmar
+      </ion-card-header>
+    </ion-card>
+
+    <button ion-button block outline (click)="back()">Voltar</button>
+
+</ion-content>
