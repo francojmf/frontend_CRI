@@ -6,70 +6,88 @@
 
 <ion-content>
   <div class="ion-padding">
-
     <ion-card class="welcome-card">
       <img src="/assets/imgs/shapes.svg" alt="" />
       <ion-card-header>
-        <ion-card-title style="font-weight: bold; color: black;" >SisWeb CRIA - Sistema Web do Projeto CRIA</ion-card-title>
+        <ion-card-title style="font-weight: bold; color: black"
+          >SisWebCRI - Sistema Web do Projeto Cadeira de Rodas
+          Infantil</ion-card-title
+        >
       </ion-card-header>
       <ion-card-content>
-        <p> Projeto Cadeira de Rodas Infantil Automatizada</p>
+        <p>Projeto Cadeira de Rodas Infantil Automatizada</p>
       </ion-card-content>
     </ion-card>
 
     <ion-list lines="none">
-        <ion-list-header>
-          <ion-label>
-            <h2>Login no Sistema: </h2>
-            <p>Clique abaixo para entrar no sistema com seu email cadastrado.</p>
-          </ion-label>
-
+      <ion-list-header>
+        <ion-label>
+          <h2>Login no Sistema:</h2>
+          <p>Clique abaixo para entrar no sistema com seu email cadastrado.</p>
+        </ion-label>
       </ion-list-header>
-        <ion-item>
-            <div class="ion-padding">
-              <button ion-button block outline (click)="gologin()">Login de Usuário</button>
-            </div>
-        </ion-item>
-
-        <ion-list-header>
-            <ion-label>
-              <h2>Aviso: </h2>
-              <p>Fazendo o cadastro e login, o usuário concorda com os Termos de Uso da UNIFESP.</p>
-              <p>Será garantido o sigilo dos dados informados.</p>
-            </ion-label>
-        </ion-list-header>
-        <ion-item>
-        <div>
-          <a  href="#" onclick="window.open('https://www.unifesp.br/termos-de-uso', '_system', 'location=yes'); return false;"> Termos de Uso - UNIFESP</a>
+      <ion-item>
+        <div class="ion-padding">
+          <button ion-button block outline (click)="gologin()">
+            Login de Usuário
+          </button>
         </div>
       </ion-item>
 
-        <ion-list-header>
-          <ion-label>
-            <h2>Se ainda não tiver cadastro: </h2>
-            <p>Clique abaixo para cadastrar-se como um novo usuário.</p>
-          </ion-label>
+      <ion-list-header>
+        <ion-label>
+          <h2>Aviso:</h2>
+          <p>
+            Fazendo o cadastro e login, o usuário concorda com os Termos de Uso
+            da UNIFESP.
+          </p>
+          <p>Será garantido o sigilo dos dados informados.</p>
+        </ion-label>
       </ion-list-header>
-        <ion-item>
-            <div class="ion-padding">
-                <button ion-button block outline (click)="signup()">Novo Usuário</button>
-            </div>
-        </ion-item>
+      <ion-item>
+        <div>
+          <a
+            href="#"
+            onclick="window.open('https://www.unifesp.br/termos-de-uso', '_system', 'location=yes'); return false;"
+          >
+            Termos de Uso - UNIFESP</a
+          >
+        </div>
+      </ion-item>
 
-        <ion-list-header>
-            <ion-label>
-              <h2>Fale conosco: </h2>
-              <p>Se tiver alguma dúvida, ou problemas com cadastro ou login, clique abaixo.</p>
-              </ion-label>
-        </ion-list-header>
-        <ion-item>
-          <div>
-            <a  href="#" onclick="window.open('https://www.unifesp.br/campus/sjc/fale-conosco.html', '_system', 'location=yes'); return false;"> Fale conosco - UNIFESP</a>
-          </div>
-        </ion-item>
+      <ion-list-header>
+        <ion-label>
+          <h2>Se ainda não tiver cadastro:</h2>
+          <p>Clique abaixo para cadastrar-se como um novo usuário.</p>
+        </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <div class="ion-padding">
+          <button ion-button block outline (click)="signup()">
+            Novo Usuário
+          </button>
+        </div>
+      </ion-item>
 
+      <ion-list-header>
+        <ion-label>
+          <h2>Fale conosco:</h2>
+          <p>
+            Se tiver alguma dúvida, ou problemas com cadastro ou login, clique
+            abaixo.
+          </p>
+        </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <div>
+          <a
+            href="#"
+            onclick="window.open('https://www.unifesp.br/campus/sjc/fale-conosco.html', '_system', 'location=yes'); return false;"
+          >
+            Fale conosco - UNIFESP</a
+          >
+        </div>
+      </ion-item>
     </ion-list>
   </div>
-
 </ion-content>
-

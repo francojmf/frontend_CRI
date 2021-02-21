@@ -9,84 +9,107 @@
 
 <ion-content>
   <div class="ion-padding">
-
     <ion-card class="welcome-card">
       <img src="/assets/imgs/shapes.svg" alt="" />
       <ion-card-header>
-        <ion-card-title style="font-weight: bold; color: rgb(25, 114, 65);" >SisWeb CRIA - Sistema Web do Projeto CRIA - Login ativado</ion-card-title>
+        <ion-card-title style="font-weight: bold; color: rgb(25, 114, 65)"
+          >SisWebCRI - Sistema Web do Projeto Cadeira de Rodas Infantil - Login
+          ativado</ion-card-title
+        >
       </ion-card-header>
       <ion-card-content>
-        <p> Projeto Cadeira de Rodas Infantil Automatizada</p>
+        <p>Projeto Cadeira de Rodas Infantil</p>
       </ion-card-content>
     </ion-card>
 
     <ion-list lines="none">
-        <ion-list-header>
-          <ion-label>
-            <h2>Pedido de uma CRIA: </h2>
-            <p>Para solicitar uma CRIA é necessário preencher as informações referentes à</p>
-            <p>criança que será beneficiada, incluindo as medidas necessárias para a confecção.</p>
-            <p>Se os dados não  estiverem completos, o pedido não será autorizado.</p>
-            <p>Podem ser solicitadas informações adicionais via e-mail.</p>
-            <p>Clique abaixo para fazer um pedido.</p>
-          </ion-label>
-      </ion-list-header>
-        <ion-item>
-            <div class="ion-padding">
-              <button ion-button block outline (click)="order()">Pedido de CRIA</button>
-            </div>
-        </ion-item>
-
-        <ion-list-header>
-          <ion-label>
-            <h2>Lista de pedidos: </h2>
-            <p>Clique abaixo para ver ou alterar a Lista de Pedidos.</p>
-          </ion-label>
+      <ion-list-header>
+        <ion-label>
+          <h2>Pedido de uma Cadeira de Rodas:</h2>
+          <p>
+            Para solicitar uma Cadeira de Rodas é necessário preencher as
+            informações referentes à
+          </p>
+          <p>
+            criança que será beneficiada, incluindo as medidas necessárias para
+            a confecção.
+          </p>
+          <p>
+            Se os dados não estiverem completos, o pedido não será autorizado.
+          </p>
+          <p>Podem ser solicitadas informações adicionais via e-mail.</p>
+          <p>Clique abaixo para fazer um pedido.</p>
+        </ion-label>
       </ion-list-header>
       <ion-item>
-          <div class="ion-padding">
-              <button ion-button block outline (click)="pedidos()">Lista de Pedidos</button>
-          </div>
+        <div class="ion-padding">
+          <button ion-button block outline (click)="order()">
+            Pedido de Cadeira de Rodas
+          </button>
+        </div>
       </ion-item>
 
-        <ion-list-header>
-          <ion-label>
-            <h2>Seu cadastro: </h2>
-            <p>Clique abaixo para ver ou alterar seu cadastro.</p>
-          </ion-label>
+      <ion-list-header>
+        <ion-label>
+          <h2>Lista de pedidos:</h2>
+          <p>Clique abaixo para ver ou alterar a Lista de Pedidos.</p>
+        </ion-label>
       </ion-list-header>
-        <ion-item>
-            <div class="ion-padding">
-                <button ion-button block outline (click)="profile()">Perfil de Usuário</button>
-            </div>
-        </ion-item>
+      <ion-item>
+        <div class="ion-padding">
+          <button ion-button block outline (click)="pedidos()">
+            Lista de Pedidos
+          </button>
+        </div>
+      </ion-item>
 
-        <ion-list-header>
-          <ion-label>
-            <h2>Lista de usuários: </h2>
-            <p>Clique abaixo para ver ou alterar a Lista de Usuários.</p>
-          </ion-label>
+      <ion-list-header>
+        <ion-label>
+          <h2>Seu cadastro:</h2>
+          <p>Clique abaixo para ver ou alterar seu cadastro.</p>
+        </ion-label>
       </ion-list-header>
-        <ion-item>
-            <div class="ion-padding">
-                <button ion-button block outline (click)="usuarios()">Lista de Usuários</button>
-            </div>
-        </ion-item>
+      <ion-item>
+        <div class="ion-padding">
+          <button ion-button block outline (click)="profile()">
+            Perfil de Usuário
+          </button>
+        </div>
+      </ion-item>
 
-        <ion-list-header>
-            <ion-label>
-              <h2>Fale conosco: </h2>
-              <p>Se tiver alguma dúvida, ou problemas com seu cadastro ou pedido, clique abaixo.</p>
-              </ion-label>
-        </ion-list-header>
-        <ion-item>
-          <div>
-            <a  href="#" onclick="window.open('https://www.unifesp.br/campus/sjc/fale-conosco.html', '_system', 'location=yes'); return false;"> Fale conosco - UNIFESP</a>
-          </div>
-        </ion-item>
+      <ion-list-header>
+        <ion-label>
+          <h2>Lista de usuários:</h2>
+          <p>Clique abaixo para ver ou alterar a Lista de Usuários.</p>
+        </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <div class="ion-padding">
+          <button ion-button block outline (click)="usuarios()">
+            Lista de Usuários
+          </button>
+        </div>
+      </ion-item>
 
+      <ion-list-header>
+        <ion-label>
+          <h2>Fale conosco:</h2>
+          <p>
+            Se tiver alguma dúvida, ou problemas com seu cadastro ou pedido,
+            clique abaixo.
+          </p>
+        </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <div>
+          <a
+            href="#"
+            onclick="window.open('https://www.unifesp.br/campus/sjc/fale-conosco.html', '_system', 'location=yes'); return false;"
+          >
+            Fale conosco - UNIFESP</a
+          >
+        </div>
+      </ion-item>
     </ion-list>
   </div>
-
 </ion-content>
-
