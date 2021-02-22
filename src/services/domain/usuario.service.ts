@@ -8,52 +8,47 @@ import { ImageUtilService } from "../image-util.service";
 
 @Injectable()
 export class UsuarioService {
+  constructor(
+    public http: HttpClient,
+    public storage: StorageService,
+    public imageUtilService: ImageUtilService
+  ) {}
 
-    constructor(
-        public http: HttpClient,
-        public storage: StorageService,
-        public imageUtilService: ImageUtilService) {
-    }
-
-    findById(id: string) {
-        return this.http.get(`${API_CONFIG.baseUrl}/usuarios/${id}`);
-    }
-
-    findByEmail(email: string) {
-        return this.http.get(`${API_CONFIG.baseUrl}/usuarios/email?value=${email}`);
-    }
-
-    findAddressById(id: string) {
-      return this.http.get(`${API_CONFIG.baseUrl}/enderecos/${id}`);
+  findAll(): Observable<UsuarioDTO[]> {
+    return this.http.get<UsuarioDTO[]>(`${API_CONFIG.baseUrl}/usuarios`);
   }
 
-    getImageFromBucket(id : string) : Observable<any> {
-        let url = `${API_CONFIG.bucketBaseUrl}/cp${id}.jpg`
-        return this.http.get(url, {responseType : 'blob'});
-    }
+  findById(id: string) {
+    return this.http.get(`${API_CONFIG.baseUrl}/usuarios/${id}`);
+  }
 
-    insert(obj : UsuarioDTO) {
-        return this.http.post(
-            `${API_CONFIG.baseUrl}/usuarios`,
-            obj,
-            {
-                observe: 'response',
-                responseType: 'text'
-            }
-        );
-    }
+  findByEmail(email: string) {
+    return this.http.get(`${API_CONFIG.baseUrl}/usuarios/email?value=${email}`);
+  }
 
-    uploadPicture(picture) {
-        let pictureBlob = this.imageUtilService.dataUriToBlob(picture);
-        let formData : FormData = new FormData();
-        formData.set('file', pictureBlob, 'file.png');
-        return this.http.post(
-            `${API_CONFIG.baseUrl}/usuarios/picture`,
-            formData,
-            {
-                observe: 'response',
-                responseType: 'text'
-            }
-        );
-    }
+  findAddressById(id: string) {
+    return this.http.get(`${API_CONFIG.baseUrl}/enderecos/${id}`);
+  }
+
+  getImageFromBucket(id: string): Observable<any> {
+    let url = `${API_CONFIG.bucketBaseUrl}/cp${id}.jpg`;
+    return this.http.get(url, { responseType: "blob" });
+  }
+
+  insert(obj: UsuarioDTO) {
+    return this.http.post(`${API_CONFIG.baseUrl}/usuarios`, obj, {
+      observe: "response",
+      responseType: "text",
+    });
+  }
+
+  uploadPicture(picture) {
+    let pictureBlob = this.imageUtilService.dataUriToBlob(picture);
+    let formData: FormData = new FormData();
+    formData.set("file", pictureBlob, "file.png");
+    return this.http.post(`${API_CONFIG.baseUrl}/usuarios/picture`, formData, {
+      observe: "response",
+      responseType: "text",
+    });
+  }
 }

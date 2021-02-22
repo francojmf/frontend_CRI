@@ -9,20 +9,19 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let pedidos of pedidos">
-      <ion-avatar item-start> Pedido {{pedidos.ped}} </ion-avatar>
+    <ion-item *ngFor="let pedido of pedidos">
+      <ion-avatar item-start> Pedido {{pedido.id}} </ion-avatar>
       <button ion-button item-end outline>
         <ion-icon name="checkmark-circle"></ion-icon> Aprovado
       </button>
       <button ion-button color="secondary" item-end outline>Editar</button>
       <h2 style="font-weight: bolder">
-        Usuário: {{pedidos.id}} Criança: {{pedidos.nome}} Status: pendente Data
-        entrega: - Envio: -
+        Criança: {{pedido.nome}} Status: pendente Data entrega: - Envio: -
       </h2>
       <h3>
-        Tipo CRI: {{pedidos.produto}} Medidas A: {{pedidos.med_a}} B:
-        {{pedidos.med_b}} C: {{pedidos.med_c}} D: {{pedidos.med_d}} E:
-        {{pedidos.med_e}} F: {{pedidos.med_f}} Descrição: {{pedidos.descricao}}
+        Medidas A: {{pedido.med_a}} B: {{pedido.med_b}} C: {{pedido.med_c}} D:
+        {{pedido.med_d}} E: {{pedido.med_e}} F: {{pedido.med_f}} Descrição:
+        {{pedido.descricao}}
       </h3>
     </ion-item>
   </ion-list>

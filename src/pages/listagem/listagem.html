@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Usuários</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let usuario of usuarios">
+      <ion-avatar item-start> {{usuario.id}} </ion-avatar>
+      <h2 style="font-weight: bolder">
+        - {{usuario.nome}} - {{usuario.cpf_ou_cnpj}}
+      </h2>
+      <h3>Email: {{usuario.email}} {{usuario.tipo}} {{usuario.ativo}}</h3>
+      <button ion-button item-end outline>
+        <ion-icon name="checkmark-circle"></ion-icon> Ativo
+      </button>
+      <button ion-button color="secondary" item-end outline>Editar</button>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <button ion-button block outline (click)="backMenu()">Voltar</button>
+  </ion-item>
+</ion-content>
