@@ -2,7 +2,7 @@ import { CidadeDTO } from "./cidade.dto";
 import { UsuarioDTO } from "./usuario.dto";
 
 export interface EnderecosDTO {
-  id: UsuarioDTO;
+  id: string;
   logradouro: string;
   numero: string;
   complemento: string;

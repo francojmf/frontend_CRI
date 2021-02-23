@@ -5,8 +5,8 @@ export interface UsuarioDTO {
   nome: string;
   email: string;
   cpf_ou_cnpj: string;
-  tipo: number;
-  ativo: number;
+  tipo: string;
+  ativo: string;
   enderecos: EnderecosDTO;
   imageUrl?: string;
 }
