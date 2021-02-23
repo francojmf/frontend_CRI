@@ -1,15 +1,16 @@
 {
-  "name": "CriaSpringIonic",
+  "name": "cria-spring-ionic",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Joao M Franco",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
-    "build": "ionic-app-scripts build",
+    "build": "tsc",
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+    "ionic:serve": "ionic-app-scripts serve",
+    "start": "node dist/main/server.js"
   },
   "dependencies": {
     "@angular/common": "5.0.3",
@@ -51,7 +52,7 @@
   "engines": {
     "node": ">=12"
   },
-  "description": "An Ionic project",
+  "description": "Ionic project using a Java backend",
   "cordova": {
     "plugins": {
       "ionic-plugin-keyboard": {},
@@ -61,6 +62,7 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-camera": {}
     },
+    "licence": "MIT",
     "platforms": [
       "browser",
       "android"
