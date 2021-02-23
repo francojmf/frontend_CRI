@@ -5,8 +5,8 @@ import { StorageService } from "../../services/storage.service";
 import { UsuarioService } from "../../services/domain/usuario.service";
 import { PedidosDTO } from "../../models/pedidos.dto";
 import { CartService } from "../../services/domain/cart.service";
-import { EntregaDTO } from "../../models/entrega.dto";
 import { ItemDTO } from "../../models/item.dto";
+import { ItemPedidoDTO } from "../../models/item-pedido.dto";
 
 @IonicPage()
 @Component({
@@ -14,9 +14,9 @@ import { ItemDTO } from "../../models/item.dto";
   templateUrl: "pick-address.html",
 })
 export class PickAddressPage {
-  items: EnderecosDTO[];
+  itens: ItemPedidoDTO;
   pedido: PedidosDTO;
-  entrega: EntregaDTO;
+  endereco: EnderecosDTO;
   item: ItemDTO[];
 
   constructor(
@@ -30,39 +30,28 @@ export class PickAddressPage {
   ionViewDidLoad() {
     let localUser = this.storage.getLocalUser();
     if (localUser && localUser.email) {
-      this.usuarioService.findByEmail(localUser.email).subscribe(
-        (response) => {
-          this.items = response["enderecos"];
+      this.usuarioService.findByEmail(localUser.email).subscribe((response) => {
+        this.itens = response["item-pedido"];
 
-          let cart = this.cartService.getCart();
-
-          this.pedido = {
-            usuarios: { id: response["id"] },
-            endereco: null,
-            pagamento: null,
-            entrega: null,
-            itens: null,
-            item: cart.items.map((x) => {
-              return {
-                quantidade: x.quantidade,
-                produto: { id: x.produto.id },
-              };
-            }),
-          };
-        },
+        //      let cart = this.cartService.getCart();
+        this.pedido = {
+          id: response["id"],
+          endereco: response["endereco"],
+          item: response["item"],
+          itens: response["item-pedido"],
+        };
+      }),
         (error) => {
           if (error.status == 403) {
             this.navCtrl.setRoot("MenuPage");
           }
-        }
-      );
+        };
     } else {
       this.navCtrl.setRoot("MenuPage");
     }
   }
 
   nextPage(item: EnderecosDTO) {
-    this.pedido.enderecoDeEntrega = { id: item.id };
-    this.navCtrl.push("OrderPayPage", { pedido: this.pedido });
+    this.navCtrl.push("OrderConfirmationPage", { pedido: this.pedido });
   }
 }

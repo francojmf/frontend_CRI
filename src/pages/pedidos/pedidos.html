@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Meus Pedidos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <button
+        ion-item
+        *ngFor="let pedido of pedidos"
+        (click)="showPedidos(pedido.id)"
+      >
+        <p><strong>Pedido Nº: {{ pedido.id }} </strong></p>
+        <p>Data: {{ pedido.instante }}</p>
+      </button>
+    </ion-card-header>
+  </ion-card>
+
+  <div id="btn-goProds" *ngIf="isEmpty(pedidos)">
+    <p>Você ainda não tem pedidos</p>
+    <button ion-button (click)="goOn()">Ver Produtos</button>
+  </div>
+</ion-content>

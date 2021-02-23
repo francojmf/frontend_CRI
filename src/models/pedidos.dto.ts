@@ -3,7 +3,7 @@ import { ItemPedidoDTO } from "./item-pedido.dto";
 import { ItemDTO } from "./item.dto";
 
 export interface PedidosDTO {
-  [x: string]: any;
+  id: string;
   endereco: EnderecosDTO;
   itens: ItemPedidoDTO[];
   item: ItemDTO[];

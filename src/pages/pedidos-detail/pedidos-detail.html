@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Detalhes do Pedido Nº {{id}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header class="card"> Data/Hora: {{data}} </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header class="card"> Produtos: </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let item of itens">
+        <p>{{item.nome}} {{item.descricao}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header class="card"> Endereço de Entrega: </ion-card-header>
+    <ion-list>
+      <ion-item>
+        <p>
+          {{endereco?.logradouro}}, {{endereco?.numero}}, {{endereco?.bairro}}
+        </p>
+        <p>{{endereco?.complemento}}</p>
+        <p>CEP: {{endereco?.cep}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

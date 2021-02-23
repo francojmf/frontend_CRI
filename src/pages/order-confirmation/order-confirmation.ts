@@ -42,7 +42,7 @@ export class OrderConfirmationPage {
       (response) => {
         this.usuario = response as UsuarioDTO;
         this.endereco = this.findEndereco(
-          this.pedido.enderecoDeEntrega.id,
+          this.pedido.endereco.id,
           response["enderecos"]
         );
       },

@@ -33,7 +33,6 @@ export class DeliveryPage {
   }
 
   nextPage() {
-    this.pedido.entrega = this.formGroup.value;
     this.navCtrl.setRoot("OrderConfirmation", { pedido: this.pedido });
   }
 }
