@@ -14,7 +14,7 @@ import { ItemPedidoDTO } from "../../models/item-pedido.dto";
   templateUrl: "pick-address.html",
 })
 export class PickAddressPage {
-  itens: ItemPedidoDTO;
+  items: ItemPedidoDTO;
   pedido: PedidosDTO;
   endereco: EnderecosDTO;
   item: ItemDTO[];
@@ -31,7 +31,7 @@ export class PickAddressPage {
     let localUser = this.storage.getLocalUser();
     if (localUser && localUser.email) {
       this.usuarioService.findByEmail(localUser.email).subscribe((response) => {
-        this.itens = response["item-pedido"];
+        this.items = response["item-pedido"];
 
         //      let cart = this.cartService.getCart();
         this.pedido = {
