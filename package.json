@@ -48,6 +48,9 @@
     "typescript": "2.4.2"
   },
   "devDependencies": {},
+  "engines": {
+    "node": ">=12"
+  },
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
